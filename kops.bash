@@ -19,3 +19,11 @@ export bucket_name={YOUR_BUCKET_NAME}
 export KOPS_CLUSTER_NAME={YOUR_KOPS_CLUSTER_NAME}
 export KOPS_STATE_STORE=s3://${bucket_name}
 
+echo 'Create Cluster'
+kops create cluster --zones=ap-southeast-1a --name=${KOPS_CLUSTER_NAME} --ssh-public-key=~/.ssh/authorized_keys
+echo 'Get Cluster'
+kops get cluster
+echo 'Validate Cluster'
+kops validate cluster
+echo 'Update Cluster'
+kops update cluster --name ${KOPS_CLUSTER_NAME} --yes
