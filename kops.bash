@@ -12,8 +12,9 @@ chmod +x kops-linux-amd64
 sudo mv kops-linux-amd64 /usr/local/bin/kops
 sudo apt-get update
 echo 'Install Aws-CLI'
-sudo apt-get install awscli
+sudo apt-get install awscli -y
 aws configure
+
 
 export bucket_name={YOUR_BUCKET_NAME}
 export KOPS_CLUSTER_NAME={YOUR_KOPS_CLUSTER_NAME}
