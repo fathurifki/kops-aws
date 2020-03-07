@@ -18,3 +18,14 @@ HTTP |  Port 80, IP range ::/0
  All UDP |  Port 0 , IP range 0.0.0.0/0 & ::/0
  HTTPS |  Port 443 Port 0 - 65535 , IP range 0.0.0.0/0 & ::/0
  Custom TCP RULE |  Port 0 - 65535 , IP range 0.0.0.0/0 & ::/0
+
+ ### Route 53
+- Create your hosted zone same like your domain name 
+- After create your hosted you will get record set
+
+|	Name	 	 | Type  |  Value |
+------------ | ------------- | --------- |
+test.my.id |NS| ns-104.awsdns-13.com. ns-1889.awsdns-44.co.uk. ns-1112.awsdns-11.org. ns-718.awsdns-25.net.
+test.my.id |SOA| ns-104.awsdns-13.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
+
+Use that NameServer AWS (NS) for configure your domain Nameserver 
