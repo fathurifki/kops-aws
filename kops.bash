@@ -14,15 +14,20 @@ sudo apt-get update
 echo 'Install Aws-CLI'
 sudo apt-get install awscli -y
 sudo apt update
+echo 'Install Docker'
 sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 sudo apt update
 apt-cache policy docker-ce
+echo 'Installing Docker'
 sudo apt install docker-ce
 sudo systemctl status docker
+echo 'Using docker without Sudo'
 sudo usermod -aG docker
 docker
+echo 'Installing Kubernetes Dashboard'
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta8/aio/deploy/recommended.yaml
 aws configure
 
 'echo export to BASHRC'
