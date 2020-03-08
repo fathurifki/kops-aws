@@ -29,3 +29,12 @@ test.my.id |NS| ns-104.awsdns-13.com. ns-1889.awsdns-44.co.uk. ns-1112.awsdns-11
 test.my.id |SOA| ns-104.awsdns-13.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
 
 Use that NameServer AWS (NS) for configure your domain Nameserver 
+
+### S3 Bucket 
+Create your own S3 Bucket, for example :
+|	Type	 	 | Name |
+------|----|
+Bucket-name | test-bucket.my.id
+Region | ap-southeast-1a
+Permission | (optional)
+ 
