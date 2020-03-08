@@ -45,4 +45,5 @@ Permission | (optional)
 - locate your .pem aws
 - scp -i <your .pem location> < Instance IP >/home/ubuntu/kube.zip kube.zip
 - create user for aws configuration
- 
+- dont forget get secret token kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
+- Expose the proxy kubectl proxy --address 0.0.0.0 --accept-hosts '.*'
