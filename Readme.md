@@ -37,4 +37,12 @@ Create your own S3 Bucket, for example :
 Bucket-name | test-bucket.my.id
 Region | ap-southeast-1a
 Permission | (optional)
+
+### Kubernetes Dashboard
+:floppy_disk:  If you want showing up Kubernetes dashboard you can remote it into your localhost, because it wont load on your instance. So here instruction
+
+- zip your kubernetes configuration .kube
+- locate your .pem aws
+- scp -i <your .pem location> < Instance IP >/home/ubuntu/kube.zip kube.zip
+- create user for aws configuration
  
