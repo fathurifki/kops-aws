@@ -47,3 +47,13 @@ Permission | (optional)
 - create user for aws configuration
 - dont forget get secret token kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
 - Expose the proxy kubectl proxy --address 0.0.0.0 --accept-hosts '.*'
+
+### Expected Budget
+|	Type	 	 | Price |
+------|----|
+Amazon EC2 Service (Asia Pacific (Singapore))| 10.69
+Amazon S3 Service (Asia Pacific (Singapore)) | 0.50
+Amazon Route 53 Service | 2.50
+Amazon RDS Service (Asia Pacific (Singapore))|65.40
+Free Tier  Discount:| -33.09
+Total|46.00
