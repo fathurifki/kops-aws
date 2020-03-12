@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-pesbuk
+spec:
+  selector:
+    matchLabels:
+      run: php-pesbuk
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: php-pesbuk
+      spec:
+        volumes:
+        - configMap:
+              name: p-fb-configmap
+                name: config-fb
+          containers:
+        - name: php-pesbuk
+          image: tuanpembual/php-pesbuk:configmap
+          ports:
+          - containerPort: 80
+          volumeMounts:
+              - name: config-fb
+                mountPath: "config.php"
+                subPath: "config.php"
