@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pesbok
+  namespace: production
+spec:
+  selector:
+    matchLabels:
+      app: php-mysql
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: php-mysql
+    spec:
+      containers:
+      - name: pesbok
+        image: rifkiflq2811/pesbuk:2
+        ports:
+        - containerPort: 80
+      env:
+        - name: DB_HOST
+          value: "production.cx8nccy0c1hj.ap-southeast-1.rds.amazonaws.com"
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+                name: p-secret-fb
+                key: DB_USER
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+                name: p-secret-fb
+                key: DB_PASS
