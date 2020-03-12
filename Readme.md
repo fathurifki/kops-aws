@@ -57,3 +57,11 @@ Amazon Route 53 Service | 2.50
 Amazon RDS Service (Asia Pacific (Singapore))|65.40
 Free Tier  Discount:| -33.09
 Total|46.00
+
+### Notes
+For deleting kops cluster you can use kops delete cluster --name ${KOPS_CLUSTER_NAME} --yes
+For editing kops cluster you can use command kops edit ig --name ${KOPS_CLUSTER_NAME} nodes
+For creating kops cluster you can use command kops create cluster \
+--zones=ap-southeast-1a \
+--name=${KOPS_CLUSTER_NAME} \
+--ssh-public-key=~/.ssh/id_rsa.pub
